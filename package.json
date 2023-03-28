@@ -1,0 +1,33 @@
+{
+  "name": "game-hub-bot",
+  "version": "1.0.0",
+  "description": "A discord bot created with discord.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "register": "node deploy-commands.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IDevonI/game-hub-bot.git"
+  },
+  "keywords": [
+    "discord",
+    "gamehub"
+  ],
+  "author": "Devon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IDevonI/game-hub-bot/issues"
+  },
+  "homepage": "https://github.com/IDevonI/game-hub-bot#readme",
+  "dependencies": {
+    "discord.js": "^14.8.0",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.36.0",
+    "nodemon": "^2.0.22"
+  }
+}
