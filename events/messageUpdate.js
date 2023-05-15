@@ -16,6 +16,7 @@ module.exports = {
             )
             .setTimestamp(newMessage.createdTimestamp)
         await newMessage.client.channels.cache.get(process.env.LOG_CHANNEL_ID).send({
+            content: message.attachments.size ? "Załączniki:" : null,
             embeds: [embed],
             files: Array.from(newMessage.attachments, ([key, value]) => value)
         });

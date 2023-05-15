@@ -7,15 +7,16 @@ module.exports = {
         const embed = new EmbedBuilder()
             .setColor('#fa5c5c')
             .setTitle(message.author.tag)
-            .setThumbnail("https://cdn.discordapp.com/avatars/"+message.author.id+"/"+message.author.avatar+".jpeg")
+            .setThumbnail("https://cdn.discordapp.com/avatars/" + message.author.id + "/" + message.author.avatar + ".jpeg")
             .setDescription(`ID Użytkownika: ${message.author.id}\nID Wiadomości: ${message.id}\nKanał: ${message.channel}`)
             .addFields(
-                { name: 'Treść', value: message.cleanContent}
+                { name: 'Treść', value: message.cleanContent }
             )
             .setTimestamp(message.createdTimestamp)
         await message.client.channels.cache.get(process.env.LOG_CHANNEL_ID).send({
+            content: message.attachments.size ? "Załączniki:" : null,
             embeds: [embed],
-            files: Array.from(message.attachments, ([key,value])=> value)
+            files: Array.from(message.attachments, ([key, value]) => value)
         });
     }
 };
