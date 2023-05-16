@@ -7,7 +7,7 @@ module.exports = {
         if (member.user.bot) {
             const embed = new EmbedBuilder()
                 .setColor('#00ff00')
-                .setTitle(`Bot ${member} przybył aby usprawnić serwer!`)
+                .setTitle(`Bot ${member.user.tag} przybył aby usprawnić serwer!`)
                 .setThumbnail("https://cdn.discordapp.com/avatars/" + member.id + "/" + member.avatar + ".jpeg")
                 .setImage('https://media.giphy.com/media/CTX0ivSQbI78A/giphy.gif')
                 .setTimestamp(Date.now())

@@ -10,12 +10,12 @@ module.exports = {
             .setThumbnail("https://cdn.discordapp.com/avatars/" + message.author.id + "/" + message.author.avatar + ".jpeg")
             .setDescription(`ID Użytkownika: ${message.author.id}\nID Wiadomości: ${message.id}\nKanał: ${message.channel}`)
             .addFields(
-                { name: 'Treść', value: message.cleanContent }
+                { name: 'Treść', value: message.cleanContent || '*Brak treści!*' }
             )
             .setTimestamp(message.createdTimestamp)
         await message.client.channels.cache.get(process.env.LOG_CHANNEL_ID).send({
             content: message.attachments.size ? "Załączniki:" : null,
-            embeds: [embed],
+            embeds: [embed].concat(message.embeds),
             files: Array.from(message.attachments, ([key, value]) => value)
         });
     }

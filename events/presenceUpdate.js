@@ -1,5 +1,5 @@
 const { Events } = require('discord.js');
-const { getTimestamp, setStats } = require('../utils');
+const { setStats } = require('../utils');
 
 module.exports = {
     name: Events.PresenceUpdate,
